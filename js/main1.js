@@ -79,9 +79,9 @@ function wikipediaViewerMain() {
 			var articleID = $(e.target).parent().closest('div').attr('id');
 			window.open('http://en.wikipedia.org/wiki?curid=' + articleID);
 		}
-		//else if($(e.target) === 'p'){
-		//	window.open('http://en.wikipedia.org/wiki?curid=' + $(e.target).closest('div').attr('id'));
-		//}
+		else if($(e.target).closest('div').attr('class') === 'response'){
+			window.open('http://en.wikipedia.org/wiki?curid=' + $(e.target).closest('div').attr('id'));
+		}
 	});
 
 }
