@@ -65,15 +65,22 @@ function wikipediaViewerMain() {
             });
     }
 
+    /* function clearResults() removes all the article summary's from the webpage. */
+    function clearResults() {
+        $('#response-area').children('div').remove();
+    }
+
     /* function provides an event listener for the random search button, and on a click event does
      * a random article query on Wikipedia.  */
     $('#random-button').click(function () {
+        clearResults();                            // if there are old search results, clear them.
         window.open(randomURL);                    // open a new window, do a random page search.
     });
 
     /* function provides an event listener for the search button, and on a click event does
      * an article query on Wikipedia using user's search criteria.  */
     $('#search-button').click(function () {
+        clearResults();                            // if there are old search results, clear them.
         getSearchBoxValue();                       // update variable holding search criteria.
         search();                                  // run search.
     });
@@ -81,8 +88,9 @@ function wikipediaViewerMain() {
     /* function provides an event listener for the search box, and detects the Enter key. On Enter key, do
      * an article query on Wikipedia using user's search criteria. */
     $('#search-box').click(function () {
-        if (event.which === 13) {                  // test for Enter key.
+        if (event.which === 13) {                  // test for Enter key (ASCII 13).
             getSearchBoxValue();                   // update variable holding search criteria.
+            clearResults();                        // if there are old search results, clear them.
             search();                              // run search.
         }
     });
