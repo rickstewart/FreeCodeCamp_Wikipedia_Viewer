@@ -27,6 +27,7 @@ function wikipediaViewerMain() {
 		}
 	}
 
+	/* function search(), using JSONP, first builds the query string */
 	function search() {
 		$.getJSON(searchURL, {                 // build the query string by adding following parameters.
 				action: 'query',
@@ -57,35 +58,60 @@ function wikipediaViewerMain() {
 			});
 	}
 
+	/*  */
+	function displaySearchResults(jsonData) {
+		searchBoxValue = '';               // reset search box stored value.
+		for (var prop in jsonData) {
+			if (!jsonData.hasOwnProperty(prop)) {   // skip loop if the property is from prototype
+				continue;
+			}
+			str = JSON.stringify(jsonData[prop], null, 4);
+			var $div = $('<div>', {id: prop, class: 'response'});
+			$('#response-area').append($div);
+			startSub = str.indexOf('extract');
+			str = '<p>' + str.substr(startSub + 11).split('</p>')[0] + '</p>';
+			str = str.replace(/\\(?!\n)/g, '');     // remove any backslash not part of a newline.
+			$(str).appendTo('#' + prop);
+		}
+	}
 
-	$('#random-button').click(function () {        // add event listener to 'Random Search' button.
+	/* function provides an event listener for the random search button, and on a click event does
+	 * a random article query on Wikipedia.  */
+	$('#random-button').click(function () {
 		window.open(randomURL);                    // open a new window, do a random page search.
 	});
 
-	$('#search-button').click(function () {        // add event listener to 'Search' button.
-		getSearchBoxValue();
-		search();
+	/* function provides an event listener for the search button, and on a click event does
+	 * an article query on Wikipedia using user's search criteria.  */
+	$('#search-button').click(function () {
+		getSearchBoxValue();                       // update variable holding search criteria.
+		search();                                  // run search.
 	});
 
-	$('#search-box').click(function () {               // add event listener to Search Box.
+	/* function provides an event listener for the search box, and detects the Enter key. On Enter key, do
+	 * an article query on Wikipedia using user's search criteria. */
+	$('#search-box').click(function () {
 		if (event.which === 13) {                  // test for Enter key.
-			getSearchBoxValue();
-			search();                              // run search on Search Box contents.
+			getSearchBoxValue();                   // update variable holding search criteria.
+			search();                              // run search.
 		}
 	});
 
-	$('#response-area').click(function(e) {
-		if($(e.target).parent().closest('div').attr('class') === 'response') {
-			var articleID = $(e.target).parent().closest('div').attr('id');
-			window.open('http://en.wikipedia.org/wiki?curid=' + articleID);
+	/* function detects if a Wikipedia article summary has been clicked, and if so the article is displayed */
+	$('#response-area').click(function (e) {
+		if ($(e.target).parent().closest('div').attr('class') === 'response') { // selects for article text.
+			var articleID = $(e.target).parent().closest('div').attr('id');     // finds the id of the div.
+			window.open('http://en.wikipedia.org/wiki?curid=' + articleID);     // get article.
 		}
-		else if($(e.target).closest('div').attr('class') === 'response'){
-			window.open('http://en.wikipedia.org/wiki?curid=' + $(e.target).closest('div').attr('id'));
+		else if ($(e.target).closest('div').attr('class') === 'response') {   // else selects border area around text.
+			window.open('http://en.wikipedia.org/wiki?curid=' + $(e.target).closest('div').attr('id')); // get article.
 		}
 	});
 
 }
+
+/* function runs main script when page has loaded. Program entry point. */
 $(document).ready(function () {
-	wikipediaViewerMain();                         // run program on page load.
+	wikipediaViewerMain();
 });
 
