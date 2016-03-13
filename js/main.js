@@ -22,7 +22,6 @@ function wikipediaViewerMain() {
             searchBoxValue = searchBox.value;
             // Wikipedia suggests removing all line breaks from query string.
             searchBoxValue = searchBoxValue.replace(/(\r\n|\n|\r)/gm, '');
-            searchBox.value = '';
         }
     }
 
@@ -65,33 +64,39 @@ function wikipediaViewerMain() {
             });
     }
 
-    /* function clearResults() removes all the article summary's from the webpage. */
-    function clearResults() {
+    /* function clearPreviousResults() removes all the article summary's from the webpage. */
+    function clearPreviousResults() {
         $('#response-area').children('div').remove();
     }
 
     /* function provides an event listener for the random search button, and on a click event does
      * a random article query on Wikipedia.  */
     $('#random-button').click(function () {
-        clearResults();                            // if there are old search results, clear them.
+        clearPreviousResults();                            // if there are old search results, clear them.
+        searchBox.value = '';                      // clear search box.
         window.open(randomURL);                    // open a new window, do a random page search.
     });
 
     /* function provides an event listener for the search button, and on a click event does
      * an article query on Wikipedia using user's search criteria.  */
     $('#search-button').click(function () {
-        clearResults();                            // if there are old search results, clear them.
-        getSearchBoxValue();                       // update variable holding search criteria.
+        clearPreviousResults();                    // if there are old search results, clear them.
+        searchBox.value = '';                      // clear search box.
         search();                                  // run search.
     });
 
     /* function provides an event listener for the search box, and detects the Enter key. On Enter key, do
      * an article query on Wikipedia using user's search criteria. */
-    $('#search-box').click(function () {
-        if (event.which === 13) {                  // test for Enter key (ASCII 13).
+    $('#search-box').keydown(function (event) {
+        if (event.keyCode === 13) {                // test for Enter key (ASCII 13).
             getSearchBoxValue();                   // update variable holding search criteria.
-            clearResults();                        // if there are old search results, clear them.
-            search();                              // run search.
+            clearPreviousResults();                // if there are old search results, clear them.
+            searchBox.value = '';                  // clear search box.
+            search();                              // run Wikipedia search.
+            return false;                          // return prevents premature Submit of input text box.
+        }
+        else {
+            getSearchBoxValue();                   // else just update variable.
         }
     });
 
