@@ -51,7 +51,7 @@ body {
     line-height: 1.6rem;
     min-height: 100%;
     display: flex;
-    background: #f2f2f2 url("../images/Wiki_background2.jpg") no-repeat fixed center 114px;
+    background: url("../images/Wiki_background2.jpg") no-repeat fixed center 114px #E07735;
     background-size: cover;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 header {
-    background: linear-gradient(to left,rgba(158,53,5,0.96),rgba(74,66,86,0.96));
+    background: linear-gradient(to left,rgba(158,53,5,1),rgba(74,66,86,1));
     border-bottom: 2px solid rgba(148,48,10,1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     font-family: 'Montaga', serif;
@@ -70,10 +70,6 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-}
-
-#header-span-left {
-
 }
 
 header img {
@@ -102,7 +98,7 @@ margin: 24px 0 0 60px;
 form {
     position: relative;
     left: 30px;
-    width: 532px;
+    width: 544px;
     margin-top: 140px;
     border: 2px solid rgba(32,124,202,1);
     border-radius: 16px;
@@ -137,23 +133,6 @@ form {
     background-color: #2058c9;
     border: 1px solid white;
     color: #fafafa;
-}
-
-::-webkit-input-placeholder {               /* For WebKit browsers */
-    color: #fafafa;
-    font-family: 'Montaga', serif;
-    font-size: 1.0em;
-}
-
-::-moz-placeholder {                        /* For Mozilla Firefox 19+ */
-    color: #fafafa;
-    font-family: 'Montaga', serif;
-    font-size: 1.0em;
-}
-:-ms-input-placeholder {                    /* For Internet Explorer 10+ */
-    color: #fafafa;
-    font-family: 'Montaga', serif;
-    font-size: 1.0em;
 }
 
 input, textarea, keygen, select {
@@ -205,9 +184,109 @@ input, textarea, keygen, select {
 @media all and (min-width:961px) {          /* tablet, landscape iPad, lo-res laptops ands desktops */
 
 }
-@media all and (min-width:1025px) {         /* big landscape tablets, laptops, and desktops */
+@media all and (max-width: 860px) {
+    body {
+        background: #f2f2f2 url("../images/Wiki_background2.jpg") repeat fixed center 96px;
+        background-size: cover;
+    }
 
+    header img {
+        width: 240px;
+        height: 81px;
+        margin: 6px 0 0 20px;
+    }
+
+    #header-span-right {
+        margin: 24px 0 0 46px;
+    }
+
+    #header-text1 {
+        font-size: 2.0em;
+    }
+
+    #header-text2 {
+        font-size: 1.3em;
+        margin-top: 8px;
+    }
+
+    form {
+         left: 20px;
+         margin-top: 110px;
+     }
+
+    .response {
+        font-size: 0.9em;
+    }
 }
-@media all and (min-width:1281px) {         /* hi-res laptops and desktops */
 
+@media all and (max-width: 730px) {
+    body {
+        background: #f2f2f2 url("../images/Wiki_background2.jpg") repeat fixed center 83px;
+    }
+
+    header img {
+        width: 200px;
+        height: 68px;
+        margin: 6px 0 0 14px;
+    }
+
+    #header-span-right {
+        margin: 18px 0 0 30px;
+    }
+
+    #header-text1 {
+        font-size: 1.7em;
+    }
+
+    #header-text2 {
+        font-size: 1.1em;
+        margin-top: 1px;
+    }
+
+    form {
+        margin-top: 100px;
+    }
+
+    .response {
+        font-size: 0.9em;
+    }
+}
+
+@media all and (max-width: 574px) {
+    body {
+        background: #f2f2f2 url("../images/Wiki_background2.jpg") repeat fixed center 144px;
+    }
+
+    header img {
+        width: 200px;
+        height: 68px;
+        margin-top: 6px;
+    }
+
+    #header-span-left {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #header-span-right {
+        margin: 0 auto;
+        padding: 0 10%;
+    }
+
+    #header-text1 {
+        font-size: 1.7em;
+    }
+
+    #header-text2 {
+        font-size: 1.1em;
+        margin: 1px 0 10px 80px;
+    }
+
+    form {
+        margin-top: 166px;
+    }
+
+    .response {
+        font-size: 0.9em;
+    }
 }

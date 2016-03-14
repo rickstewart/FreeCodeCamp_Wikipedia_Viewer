@@ -20,7 +20,7 @@ function wikipediaViewerMain() {
     function getSearchBoxValue() {
         if (searchBox.value.length !== 0) {        // tests to see that search box is not empty.
             searchBoxValue = searchBox.value;
-            // Wikipedia suggests removing all line breaks from query string.
+            /* Wikipedia suggests removing all line breaks from query string. */
             searchBoxValue = searchBoxValue.replace(/(\r\n|\n|\r)/gm, '');
         }
     }
@@ -72,7 +72,7 @@ function wikipediaViewerMain() {
     /* function provides an event listener for the random search button, and on a click event does
      * a random article query on Wikipedia.  */
     $('#random-button').click(function () {
-        clearPreviousResults();                            // if there are old search results, clear them.
+        clearPreviousResults();                    // if there are old search results, clear them.
         searchBox.value = '';                      // clear search box.
         window.open(randomURL);                    // open a new window, do a random page search.
     });
@@ -81,6 +81,7 @@ function wikipediaViewerMain() {
      * an article query on Wikipedia using user's search criteria.  */
     $('#search-button').click(function () {
         clearPreviousResults();                    // if there are old search results, clear them.
+        getSearchBoxValue();                       // update variable holding search criteria.
         searchBox.value = '';                      // clear search box.
         search();                                  // run search.
     });
