@@ -61,9 +61,9 @@ body {
 }
 
 header {
-    background: linear-gradient(to left,rgba(158,53,5,1),rgba(74,66,86,1));
-    border-bottom: 2px solid rgba(148,48,10,1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    background: linear-gradient(to left, rgba(158, 53, 5, 1), rgba(74, 66, 86, 1));
+    border-bottom: 2px solid rgba(148, 48, 10, 1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
     font-family: 'Montaga', serif;
     display: inline-flex;
     flex-flow: row wrap;
@@ -79,7 +79,7 @@ header img {
 }
 
 #header-span-right {
-margin: 24px 0 0 60px;
+    margin: 24px 0 0 60px;
 }
 
 #header-text1 {
@@ -100,7 +100,7 @@ form {
     left: 30px;
     width: 544px;
     margin-top: 140px;
-    border: 2px solid rgba(32,124,202,1);
+    border: 2px solid rgba(32, 124, 202, 1);
     border-radius: 16px;
 }
 
@@ -109,7 +109,7 @@ form {
     width: 300px;
     padding: 10px 15px;
     background: rgba(50, 50, 50, 0.3);
-    border: 0 solid rgba(32,124,202,1);
+    border: 0 solid rgba(32, 124, 202, 1);
     border-radius: 16px;
 }
 
@@ -123,13 +123,13 @@ form {
     color: #fafafa;
 }
 
-.buttons:hover  {
+.buttons:hover {
     background-color: #2058c9;
     border: 1px solid #2058c9;
     color: #fafafa;
 }
 
-.buttons:active  {
+.buttons:active {
     background-color: #2058c9;
     border: 1px solid white;
     color: #fafafa;
@@ -142,7 +142,7 @@ input, textarea, keygen, select {
 }
 
 #random-search-wrapper {
-    border: 2px solid rgba(32,124,202,1);
+    border: 2px solid rgba(32, 124, 202, 1);
     border-radius: 16px;
 }
 
@@ -163,7 +163,7 @@ input, textarea, keygen, select {
     width: 70%;
     text-align: left;
     padding: 20px;
-    border: solid 2px rgba(148,48,10,1);
+    border: solid 2px rgba(148, 48, 10, 1);
     border-radius: 16px;
     font-size: 0.9em;
 }
@@ -172,18 +172,6 @@ input, textarea, keygen, select {
     background-color: #eef287;
 }
 
-@media all and (min-width:320px) {          /* smartphones, iPhone, portrait 480x320 phones */
-
-}
-@media all and (min-width:481px) {          /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-
-}
-@media all and (min-width:641px) {         /* portrait tablets, portrait iPad, landscape e-readers,
-                                            * landscape 800x480 or 854x480 phones */
-}
-@media all and (min-width:961px) {          /* tablet, landscape iPad, lo-res laptops ands desktops */
-
-}
 @media all and (max-width: 860px) {
     body {
         background: #f2f2f2 url("../images/Wiki_background2.jpg") repeat fixed center 96px;
@@ -210,9 +198,9 @@ input, textarea, keygen, select {
     }
 
     form {
-         left: 20px;
-         margin-top: 110px;
-     }
+        left: 20px;
+        margin-top: 110px;
+    }
 
     .response {
         font-size: 14px;
@@ -288,7 +276,7 @@ input, textarea, keygen, select {
         position: relative;
         margin: 166px auto 0 auto;
         width: 304px;
-        border: 0px solid rgba(32,124,202,1);
+        border: 0px solid rgba(32, 124, 202, 1);
     }
 
     .response {
@@ -310,7 +298,7 @@ input, textarea, keygen, select {
     }
 }
 
-@media all and (max-width:430px) {
+@media all and (max-width: 430px) {
     body {
         background: #f2f2f2 url("../images/Wiki_background2.jpg") repeat fixed center 144px;
     }
@@ -345,7 +333,7 @@ input, textarea, keygen, select {
         left: 4px;
         margin: 166px auto 0 auto;
         width: 304px;
-        border: 0px solid rgba(32,124,202,1);
+        border: 0px solid rgba(32, 124, 202, 1);
     }
 
     .response {
