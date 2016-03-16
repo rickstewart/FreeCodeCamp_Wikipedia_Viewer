@@ -248,8 +248,6 @@ input, textarea, keygen, select {
     }
 
     header img {
-        width: 200px;
-        height: 68px;
         margin-top: 6px;
     }
 
@@ -263,12 +261,7 @@ input, textarea, keygen, select {
         padding: 0 10%;
     }
 
-    #header-text1 {
-        font-size: 1.7em;
-    }
-
     #header-text2 {
-        font-size: 1.1em;
         margin: 1px 0 10px 80px;
     }
 
@@ -276,12 +269,7 @@ input, textarea, keygen, select {
         position: relative;
         margin: 166px auto 0 auto;
         width: 304px;
-        border: 0px solid rgba(32, 124, 202, 1);
-    }
-
-    .response {
-        font-size: 14px;
-        line-height: 130%;
+        border: 0 solid rgba(32, 124, 202, 1);
     }
 
     .buttons {
@@ -299,28 +287,9 @@ input, textarea, keygen, select {
 }
 
 @media all and (max-width: 430px) {
-    body {
-        background: #f2f2f2 url("../images/Wiki_background2.jpg") repeat fixed center 144px;
-    }
-
-    header img {
-        width: 200px;
-        height: 68px;
-        margin-top: 6px;
-    }
-
-    #header-span-left {
-        display: block;
-        margin: 0 auto;
-    }
-
-    #header-span-right {
-        margin: 0 auto;
-        padding: 0 10%;
-    }
 
     #header-text1 {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 
     #header-text2 {
@@ -331,26 +300,10 @@ input, textarea, keygen, select {
     form {
         position: relative;
         left: 4px;
-        margin: 166px auto 0 auto;
-        width: 304px;
-        border: 0px solid rgba(32, 124, 202, 1);
     }
 
-    .response {
-        font-size: 14px;
-        line-height: 130%;
-    }
+    #search-box {
+        width: 280px;
 
-    .buttons {
-        left: 40px;
-        margin: 4px auto;
-        padding: 6px 15px;
-    }
-
-    .response {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 120%;
     }
 }
